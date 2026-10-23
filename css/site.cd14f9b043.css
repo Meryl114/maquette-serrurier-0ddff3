@@ -1951,6 +1951,32 @@ grid-column: 1 / span 5;
 grid-row: 2;
 align-self: end;
 }
+@media (min-width: 50.5625em) {
+.page-accueil .nuit-dedans {
+padding-block: var(--espace-3xl);
+}
+:where(.page-accueil) .nuit-dedans:has(.nuit-image) {
+min-block-size: 0;
+align-content: center;
+row-gap: var(--espace-l);
+}
+:where(.page-accueil) .nuit-dedans:has(.nuit-image) > .nuit-image {
+grid-column: 7 / span 6;
+grid-row: 1 / span 2;
+align-self: center;
+aspect-ratio: 3 / 2;
+}
+:where(.page-accueil) .nuit-dedans:has(.nuit-image) > .nuit-titre {
+align-self: end;
+max-inline-size: 16ch;
+font-size: var(--taille-3);
+line-height: var(--interligne-titre);
+letter-spacing: var(--approche-titre);
+}
+:where(.page-accueil) .nuit-dedans:has(.nuit-image) > .nuit-texte {
+align-self: start;
+}
+}
 :where(.page-accueil) .pose {
 background: var(--couleur-surface);
 }
@@ -2276,7 +2302,8 @@ margin-block-start: var(--espace-m);
 :where(.page-accueil) .qui-photo {
 grid-column: 1 / span 4;
 grid-row: 1;
---cadrage: 50% 50%;
+aspect-ratio: 1 / 1;
+--cadrage: 50% 22%;
 }
 :where(.page-accueil) .qui-texte {
 grid-column: 6 / span 6;
@@ -3776,14 +3803,14 @@ justify-self: stretch;
 }
 }
 @layer pages {
-.qui-associes {
+.qui-equipe {
 row-gap: var(--espace-xl);
 }
-.page-qui .qui-associes-titre {
+.page-qui .qui-equipe-titre {
 grid-column: 1 / span 8;
 max-inline-size: 13ch;
 }
-.qui-associes-texte {
+.qui-equipe-texte {
 grid-column: 7 / span 6;
 max-inline-size: 52ch;
 font-size: var(--taille-1);
@@ -3867,15 +3894,15 @@ font-size: var(--taille--1);
 max-inline-size: 46ch;
 }
 @media (max-width: 50.5em) {
-.page-qui .qui-associes-titre,
+.page-qui .qui-equipe-titre,
 .page-qui .qui-depart-titre,
-.qui-associes-texte,
+.qui-equipe-texte,
 .qui-entreprise-texte,
 .qui-sms,
 .qui-depart-texte {
 grid-column: 1;
 }
-.qui-associes,
+.qui-equipe,
 .qui-entreprise {
 row-gap: var(--espace-xl);
 }
