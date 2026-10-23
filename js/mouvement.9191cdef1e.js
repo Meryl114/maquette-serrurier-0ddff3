@@ -8,6 +8,7 @@
 //   data-parallaxe="0.15"                                  fraction de la vitesse de défilement
 //   data-epingle="120%"                                    scène épinglée (GSAP seulement)
 //   data-magnetique="0.3"                                  suit le pointeur (souris seulement)
+//   data-fil                                               liste numérotée : un filet relie les numéros au défilement
 
 const racine = document.documentElement;
 const moinsDeMouvement = matchMedia('(prefers-reduced-motion: reduce)');
@@ -323,6 +324,146 @@ function magnetiques() {
   }
 }
 
+// ---- le fil du déroulé (data-fil sur une liste numérotée par un ::before) ----
+// On mesure la liste une fois (puis à chaque changement de taille) et on donne au CSS les repères :
+// position du fil, numéros, trous autour des numéros. Rien n'est lu pendant le défilement :
+// le CSS lie le geste au défilement (animation-timeline), sinon un IntersectionObserver avance étape par étape.
+
+const LECTURE = 0.4; // ligne de lecture : à 40 % du bas de l'écran
+
+function largeurChiffre(li, style) {
+  const essai = document.createElement('span');
+  essai.textContent = '0';
+  essai.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-variant-numeric:tabular-nums';
+  Object.assign(essai.style, {
+    fontFamily: style.fontFamily,
+    fontSize: style.fontSize,
+    fontWeight: style.fontWeight,
+    letterSpacing: style.letterSpacing,
+  });
+  li.append(essai);
+  const largeur = essai.getBoundingClientRect().width;
+  essai.remove();
+  return largeur;
+}
+
+function mesurerFil(liste) {
+  const etapes = [...liste.children].filter((el) => el.tagName === 'LI');
+  if (etapes.length < 2) return null;
+  const chiffre = getComputedStyle(etapes[0], '::before');
+  if (!chiffre.content || chiffre.content === 'none') return null;
+
+  const px = (v) => `${v.toFixed(1)}px`;
+  const taille = parseFloat(chiffre.fontSize);
+  const interligne = parseFloat(chiffre.lineHeight) || taille * 1.2;
+  const demi = Math.round(taille * 0.36 + 7); // moitié du chiffre et le jour autour
+  const boite = liste.getBoundingClientRect();
+
+  const centres = etapes.map((li) => {
+    const s = getComputedStyle(li);
+    const repere = parseFloat(s.borderTopWidth) + parseFloat(s.paddingTop) + interligne / 2;
+    li.style.setProperty('--fil-repere', px(repere));
+    li.style.setProperty('--fil-demi', `${demi}px`);
+    return li.getBoundingClientRect().top - boite.top + repere;
+  });
+
+  const premiere = etapes[0];
+  const sp = getComputedStyle(premiere);
+  const x = premiere.getBoundingClientRect().left - boite.left
+    + parseFloat(sp.borderLeftWidth) + parseFloat(sp.paddingLeft)
+    + largeurChiffre(premiere, chiffre) / 2;
+
+  const haut = centres[0] + demi;
+  const long = centres[centres.length - 1] - demi - haut;
+  const arrets = [];
+  let depuis = 0;
+  for (const c of centres.slice(1, -1)) {
+    const a = c - demi - haut;
+    const b = c + demi - haut;
+    arrets.push(`var(--fil-teinte) ${px(depuis)} ${px(a)}`, `transparent ${px(a)} ${px(b)}`);
+    depuis = b;
+  }
+  arrets.push(`var(--fil-teinte) ${px(depuis)} ${px(long)}`);
+
+  const reglages = {
+    '--fil-x': px(x),
+    '--fil-haut': px(haut),
+    '--fil-long': px(long),
+    '--fil-degrade': `linear-gradient(to bottom, ${arrets.join(', ')})`,
+    '--fil-contenu': chiffre.content,
+    '--fil-chiffre-taille': chiffre.fontSize,
+    '--fil-chiffre-graisse': chiffre.fontWeight,
+    '--fil-chiffre-interligne': chiffre.lineHeight,
+    '--fil-chiffre-approche': chiffre.letterSpacing,
+  };
+  for (const [nom, valeur] of Object.entries(reglages)) liste.style.setProperty(nom, valeur);
+
+  // si la page ne défile pas assez pour que la dernière étape passe la ligne de lecture : état final
+  const hautPage = boite.top + scrollY;
+  const besoin = hautPage + centres[centres.length - 1] - (1 - LECTURE) * innerHeight;
+  const possible = racine.scrollHeight - innerHeight;
+  liste.classList.toggle('fil-fini', besoin > possible);
+
+  return { etapes, centres, haut, long };
+}
+
+function suivrePasAPas(liste, lire) {
+  liste.classList.add('fil-pas-a-pas');
+  const atteintes = new Set();
+  const avancer = () => {
+    const m = lire();
+    if (!m) return;
+    let dernier = -1;
+    m.etapes.forEach((li, i) => {
+      const oui = atteintes.has(li);
+      li.classList.toggle('fil-atteinte', oui);
+      if (oui) dernier = i;
+    });
+    const avance = dernier < 0 ? 0
+      : dernier === m.etapes.length - 1 ? m.long
+        : Math.max(0, m.centres[dernier] - m.haut);
+    liste.style.setProperty('--fil-avance', `${avance.toFixed(1)}px`);
+  };
+  const observateur = new IntersectionObserver((entrees) => {
+    for (const e of entrees) {
+      // atteinte : l'étape touche les 60 % du haut de l'écran, ou elle est déjà passée au-dessus
+      if (e.isIntersecting || e.boundingClientRect.bottom <= 0) atteintes.add(e.target);
+      else atteintes.delete(e.target);
+    }
+    avancer();
+  }, { rootMargin: `0px 0px -${LECTURE * 100}% 0px` });
+  for (const li of liste.children) observateur.observe(li);
+}
+
+function fils(immobile) {
+  for (const liste of document.querySelectorAll('[data-fil]')) {
+    let mesure = null;
+    const mesurer = () => {
+      mesure = mesurerFil(liste);
+      liste.classList.toggle('fil-pret', Boolean(mesure));
+    };
+    try {
+      mesurer();
+    } catch {
+      liste.classList.remove('fil-pret');
+      continue;
+    }
+    if (!mesure) continue;
+
+    let demande = false;
+    new ResizeObserver(() => {
+      if (demande) return;
+      demande = true;
+      requestAnimationFrame(() => {
+        demande = false;
+        mesurer();
+      });
+    }).observe(liste);
+
+    if (!immobile && !CSS.supports('animation-timeline: view()')) suivrePasAPas(liste, () => mesure);
+  }
+}
+
 // ---- démarrage : on attend la police (les lignes se mesurent avec elle), 700 ms au plus ----
 
 function demarrer() {
@@ -337,15 +478,19 @@ function demarrer() {
     // au moindre accroc, on montre tout plutôt que de laisser une page à moitié masquée
     toutMontrer();
   }
+  fils(false);
 }
 
+const police = document.fonts ? document.fonts.ready : Promise.resolve();
+const garde = new Promise((ok) => setTimeout(ok, 700));
+
 if (racine.classList.contains('js-mouvement') && !moinsDeMouvement.matches) {
-  const police = document.fonts ? document.fonts.ready : Promise.resolve();
-  const garde = new Promise((ok) => setTimeout(ok, 700));
   Promise.race([police, garde]).then(() => requestAnimationFrame(demarrer));
   moinsDeMouvement.addEventListener('change', (e) => {
     if (e.matches) toutMontrer();
   });
 } else {
   racine.classList.remove('js-mouvement');
+  // mouvement réduit : le fil se pose d'emblée dans son état final, rien ne bouge
+  Promise.race([police, garde]).then(() => requestAnimationFrame(() => fils(true)));
 }

@@ -22,7 +22,7 @@
 <meta property="og:image:alt" content="Une rosace de serrure dans la pénombre, la clé engagée dans le cylindre">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="polices/hanken-grotesk-var.0c1c4c9142.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.23930c6ff6.css">
+<link rel="stylesheet" href="css/site.8118733267.css">
 <script>
   /* posé avant le premier rendu : sans JS rien n'est masqué, avec « réduire les animations » rien ne bouge */
   (function () {
@@ -83,7 +83,7 @@
       </ul>
     </nav>
     <div class="entete-droite">
-      <p class="entete-tarif">À partir de 75 € TTC, devis gratuit</p>
+      <p class="entete-tarif">À partir de 75 € TTC, devis écrit sur place</p>
       <a class="bouton entete-appel" href="tel:[À CONFIRMER : numéro de téléphone]">
         <svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg>
         <span>Appeler</span>
@@ -101,6 +101,10 @@
 
   <section class="tete" aria-labelledby="titre-page">
     <div class="tete-cadre sombre">
+      <div class="tete-objet">
+        <picture><source type="image/avif" srcset="images/comment-ca-marche-sombre-16x9-480.ad429a7b06.avif 480w, images/comment-ca-marche-sombre-16x9-800.ad429a7b06.avif 800w, images/comment-ca-marche-sombre-16x9-1200.ad429a7b06.avif 1200w, images/comment-ca-marche-sombre-16x9-1600.ad429a7b06.avif 1600w, images/comment-ca-marche-sombre-16x9-2000.ad429a7b06.avif 2000w" sizes="(max-width: 50.5em) 1px, 64vw"><source type="image/webp" srcset="images/comment-ca-marche-sombre-16x9-480.ad429a7b06.webp 480w, images/comment-ca-marche-sombre-16x9-800.ad429a7b06.webp 800w, images/comment-ca-marche-sombre-16x9-1200.ad429a7b06.webp 1200w, images/comment-ca-marche-sombre-16x9-1600.ad429a7b06.webp 1600w, images/comment-ca-marche-sombre-16x9-2000.ad429a7b06.webp 2000w" sizes="(max-width: 50.5em) 1px, 64vw"><img src="images/comment-ca-marche-sombre-16x9-1200.ad429a7b06.jpg" srcset="images/comment-ca-marche-sombre-16x9-480.ad429a7b06.jpg 480w, images/comment-ca-marche-sombre-16x9-800.ad429a7b06.jpg 800w, images/comment-ca-marche-sombre-16x9-1200.ad429a7b06.jpg 1200w, images/comment-ca-marche-sombre-16x9-1600.ad429a7b06.jpg 1600w, images/comment-ca-marche-sombre-16x9-2000.ad429a7b06.jpg 2000w" sizes="(max-width: 50.5em) 1px, 64vw" width="1200" height="675" class="tete-image tete-image--large" alt="Une facture pliée en accordéon, une clé couleur laiton posée dessus" fetchpriority="high" decoding="async"></picture>
+        <picture><source type="image/avif" srcset="images/comment-ca-marche-sombre-4x5-480.fecd318454.avif 480w, images/comment-ca-marche-sombre-4x5-800.fecd318454.avif 800w" sizes="(min-width: 50.5625em) 1px, 86vw"><source type="image/webp" srcset="images/comment-ca-marche-sombre-4x5-480.fecd318454.webp 480w, images/comment-ca-marche-sombre-4x5-800.fecd318454.webp 800w" sizes="(min-width: 50.5625em) 1px, 86vw"><img src="images/comment-ca-marche-sombre-4x5-800.fecd318454.jpg" srcset="images/comment-ca-marche-sombre-4x5-480.fecd318454.jpg 480w, images/comment-ca-marche-sombre-4x5-800.fecd318454.jpg 800w" sizes="(min-width: 50.5625em) 1px, 86vw" width="800" height="1000" class="tete-image tete-image--etroite" alt="Une facture pliée en accordéon, une clé couleur laiton posée dessus" fetchpriority="high" decoding="async"></picture>
+      </div>
       <div class="tete-texte">
         <h1 id="titre-page">De votre appel à la facture</h1>
         <p class="tete-chapeau">On fait rarement venir un serrurier, alors on ne sait pas toujours ce qui est normal. Voici ce qui se passe chez nous, étape par étape, et ce que le serrurier ne fera pas.</p>
@@ -110,17 +114,17 @@
           <svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg>
           <span>Appeler</span>
         </a>
-        <p class="tete-ligne">À partir de 75 € TTC, devis gratuit</p>
+        <p class="tete-ligne">À partir de 75 € TTC, devis écrit sur place</p>
       </div>
     </div>
   </section>
 
   <section class="plan marche-etapes" aria-labelledby="titre-etapes">
     <h2 id="titre-etapes" class="marche-etapes-titre">Six étapes, toujours dans cet ordre</h2>
-    <ol class="marche-pas" role="list">
+    <ol class="marche-pas" role="list" data-fil>
       <li class="marche-un">
         <h3>Vous appelez</h3>
-        <p>On décroche jour et nuit, tous les jours. Vous dites où vous êtes, quel genre de porte et ce qui se passe : claquée, fermée à clé, clé cassée, porte forcée. Si votre commune n’est pas encore dans notre zone, on vous dit tout de suite si un serrurier peut quand même venir.</p>
+        <p>On décroche jour et nuit, tous les jours. Vous dites où vous êtes, quel genre de porte et ce qui se passe : claquée, fermée à clé, clé cassée, porte forcée.</p>
       </li>
       <li class="marche-un">
         <h3>Avant le départ</h3>
@@ -132,7 +136,7 @@
       </li>
       <li class="marche-un">
         <h3>Le devis</h3>
-        <p>Écrit, détaillé, gratuit. Il dit ce qui va être fait, les pièces, le prix TTC. Vous signez, il commence. Vous refusez, il repart, et vous ne devez rien, pas même le déplacement.</p>
+        <p>Écrit et détaillé : ce qui va être fait, les pièces, le prix TTC. Vous signez, il commence ; le déplacement et le diagnostic sont compris dans ce prix. Vous refusez : vous réglez le déplacement et le diagnostic, 75 € TTC, ou 95 € TTC entre 21 h et 6 h, et il repart.</p>
       </li>
       <li class="marche-un">
         <h3>L’intervention</h3>
@@ -151,7 +155,7 @@
       <ul class="filets marche-regles-liste" role="list">
         <li>Vous donner un prix final avant d’avoir vu la porte.</li>
         <li>Commencer avant que vous ayez accepté le devis écrit.</li>
-        <li>Vous faire payer un devis refusé, ou le déplacement qui va avec.</li>
+        <li>Vous faire payer autre chose que le déplacement et le diagnostic si vous refusez le devis.</li>
         <li>Percer le cylindre avant d’avoir essayé d’ouvrir autrement, quand la serrure le permet.</li>
         <li>Vous vendre une serrure neuve en pleine nuit. Sauf si la porte ne ferme plus, le changement se propose de jour, sur devis.</li>
       </ul>
@@ -173,7 +177,7 @@
     <div class="marche-nous">
       <h3>Chez nous, en plus</h3>
       <ul class="filets" role="list">
-        <li>Le devis est gratuit, et le refuser ne coûte rien, pas même le déplacement.</li>
+        <li>Pour une installation sur rendez-vous, la visite et le devis sont gratuits.</li>
         <li>Rien de plus le samedi, le dimanche et les jours fériés.</li>
         <li>Avant le départ, un appel ou un SMS pour vous dire qui vient.</li>
         <li>Le serrurier vous appelle avant d’arriver.</li>
@@ -253,11 +257,11 @@
     <span>Appeler</span>
   </a>
   <a class="bouton barre-appel-rdv" href="devis.html">Prendre rendez-vous</a>
-  <p class="barre-appel-ligne" id="barre-appel-ligne">À partir de 75 € TTC, devis gratuit</p>
+  <p class="barre-appel-ligne" id="barre-appel-ligne">À partir de 75 € TTC, devis écrit sur place</p>
 </aside>
 <script type="module" src="js/menu.3d5d6e51ad.js"></script>
 <script type="module" src="js/heure.3dac7376a8.js"></script>
 <script type="module" src="js/barre-appel.aed1ee808f.js"></script>
-<script type="module" src="js/mouvement.126a63b518.js"></script>
+<script type="module" src="js/mouvement.9191cdef1e.js"></script>
 </body>
 </html>
