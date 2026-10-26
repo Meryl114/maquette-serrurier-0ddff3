@@ -22,7 +22,7 @@
 <meta property="og:image:alt" content="Une rosace de serrure dans la pénombre, la clé engagée dans le cylindre">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="polices/hanken-grotesk-var.0c1c4c9142.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.1f11e10046.css">
+<link rel="stylesheet" href="css/site.b742c9d6bd.css">
 <script>
   /* posé avant le premier rendu : sans JS rien n'est masqué, avec « réduire les animations » rien ne bouge */
   (function () {
@@ -117,29 +117,70 @@
         <p class="tete-ligne">Jour et nuit, tous les jours, dans les communes que nous desservons.</p>
       </div>
       <div class="contact-sms">
-        <p>Vous ne pouvez pas parler ? Envoyez un SMS au même numéro avec votre adresse et ce qui se passe. [À CONFIRMER : l’équipe répond-elle aux SMS, de jour comme de nuit]</p>
+        <p>Vous ne pouvez pas parler ? Envoyez un SMS au même numéro avec votre adresse et ce qui se passe. On vous répond, de jour comme de nuit.</p>
         <a class="lien" href="sms:[À CONFIRMER : numéro de téléphone]">Envoyer un SMS</a>
       </div>
     </div>
   </section>
 
-  <div class="plan contact-voies">
-    <section class="contact-rdv" aria-labelledby="titre-rdv">
+  <div class="s-section contact-chemins">
+    <figure class="contact-fourche">
+      <img src="images/schemas/contact-deux-chemins.70a246f039.svg" width="420" height="306" alt="Schéma en fourche à partir de votre porte. À gauche, maintenant, la porte est bloquée : vous appelez, jour et nuit, en laiton ; on vous dit qui vient et le prix de départ ; devis écrit devant la porte. À droite, sur rendez-vous, pour changer une serrure : le formulaire et des photos ; on vous rappelle pour fixer la visite ; la visite et le devis sont gratuits." loading="eager" decoding="async">
+      <figcaption class="s-deroule-mention">Une porte bloquée se règle au téléphone, jamais par le formulaire. Une serrure à changer, sur rendez-vous.</figcaption>
+    </figure>
+    <section class="contact-chemin contact-chemin--urgence sombre" aria-labelledby="titre-urgence">
+      <h2 id="titre-urgence">Pour ouvrir une porte maintenant</h2>
+      <div class="contact-chemin-texte">
+        <p>Dites votre commune et ce qui bloque. Avant qu’il parte, on vous donne le prénom du serrurier.</p>
+<p>Si vous refusez son devis, vous réglez le déplacement et le diagnostic (voir les tarifs).</p>
+      </div>
+      <div class="contact-chemin-prix">
+        <p class="prix-chiffres">À partir de 75 € TTC</p>
+        <p class="contact-chemin-detail">Pour une porte claquée en journée, déplacement compris dans notre zone. À partir de 95 € TTC entre 21 h et 6 h.</p>
+      </div>
+      <a class="bouton bouton-fort" href="tel:[À CONFIRMER : numéro de téléphone]" data-barre-retrait>
+        <svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg>
+        <span>Appeler le [À CONFIRMER : numéro de téléphone]</span>
+      </a>
+    </section>
+    <section class="contact-chemin contact-chemin--rdv" aria-labelledby="titre-rdv">
+      <figure class="contact-chemin-objet">
+        <picture><source type="image/avif" srcset="images/serrure-claire-4x5-480.daa3e33fe4.avif 480w, images/serrure-claire-4x5-800.daa3e33fe4.avif 800w, images/serrure-claire-4x5-1080.daa3e33fe4.avif 1080w" sizes="(max-width: 50.5em) 92vw, 40vw"><source type="image/webp" srcset="images/serrure-claire-4x5-480.daa3e33fe4.webp 480w, images/serrure-claire-4x5-800.daa3e33fe4.webp 800w, images/serrure-claire-4x5-1080.daa3e33fe4.webp 1080w" sizes="(max-width: 50.5em) 92vw, 40vw"><img src="images/serrure-claire-4x5-1080.daa3e33fe4.jpg" srcset="images/serrure-claire-4x5-480.daa3e33fe4.jpg 480w, images/serrure-claire-4x5-800.daa3e33fe4.jpg 800w, images/serrure-claire-4x5-1080.daa3e33fe4.jpg 1080w" sizes="(max-width: 50.5em) 92vw, 40vw" width="1080" height="1350" alt="" loading="lazy" decoding="async"></picture>
+      </figure>
       <h2 id="titre-rdv">Pour changer ou renforcer une serrure</h2>
-      <p>Le formulaire de rendez-vous nous dit déjà presque tout : la porte, la commune et quand vous êtes chez vous. Joignez-y des photos de la serrure si vous pouvez. On vous rappelle ensuite pour fixer la visite.</p>
+      <div class="contact-chemin-texte">
+        <p>Le formulaire nous dit la porte, la commune et quand vous êtes chez vous. Joignez-y des photos de la serrure si vous pouvez.</p>
+<p>On vous rappelle pour fixer la visite. Elle est gratuite, comme le devis.</p>
+      </div>
       <a class="bouton bouton-fort" href="devis.html">Prendre rendez-vous</a>
     </section>
-    <section class="contact-autre" aria-labelledby="titre-ecrire">
-      <h2 id="titre-ecrire">Pour tout le reste</h2>
-      <p>Une facture à retrouver, une question sur un devis ou une remarque : écrivez-nous. On vous répond par e-mail.</p>
-      <p class="contact-courriel">Écrire à <a class="lien" href="mailto:[À CONFIRMER : email]">[À CONFIRMER : email]</a></p>
-    </section>
-    <section class="contact-autre" aria-labelledby="titre-zone">
-      <h2 id="titre-zone">Où nous intervenons</h2>
-      <p>Le serrurier se déplace dans les communes de notre zone. Ailleurs, appelez quand même : on vous dit si un serrurier peut venir.</p>
-      <a class="lien" href="zones-d-intervention.html">Voir les communes desservies</a>
-    </section>
   </div>
+
+  <section class="s-section s-liens s-liens--texte" aria-labelledby="titre-reste">
+    <div class="s-liens-tete">
+      <h2 id="titre-reste">Pour tout le reste</h2>
+    </div>
+    <ul class="s-suite-liens s-liens-liste" role="list">
+      <li>
+        <a class="s-suite-lien" href="mailto:[À CONFIRMER : email]">
+          <span class="s-suite-intitule">Écrire à [À CONFIRMER : email]</span>
+          <span class="s-suite-ligne">Une facture à retrouver ou une question sur un devis : on vous répond par e-mail.</span>
+        </a>
+      </li>
+      <li>
+        <a class="s-suite-lien" href="zones-d-intervention.html">
+          <span class="s-suite-intitule">Les communes où nous intervenons</span>
+          <span class="s-suite-ligne">La liste entière, avec la distance de chaque commune.</span>
+        </a>
+      </li>
+      <li>
+        <a class="s-suite-lien" href="qui-intervient.html">
+          <span class="s-suite-intitule">Qui intervient chez vous</span>
+          <span class="s-suite-ligne">Le serrurier qui vient et l’entreprise qui vous répond de son travail.</span>
+        </a>
+      </li>
+    </ul>
+  </section>
 
 </main>
 <footer class="pied sombre" data-barre-pied>

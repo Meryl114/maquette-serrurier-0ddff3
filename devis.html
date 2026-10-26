@@ -22,7 +22,7 @@
 <meta property="og:image:alt" content="Une rosace de serrure dans la pénombre, la clé engagée dans le cylindre">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="polices/hanken-grotesk-var.0c1c4c9142.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.1f11e10046.css">
+<link rel="stylesheet" href="css/site.b742c9d6bd.css">
 <script>
   /* posé avant le premier rendu : sans JS rien n'est masqué, avec « réduire les animations » rien ne bouge */
   (function () {
@@ -113,12 +113,26 @@
   </p>
 
   <div class="devis-corps">
-    <ol class="devis-plan" role="list" aria-label="Les quatre étapes">
-      <li><a href="#etape-1">Ce que vous voulez faire</a></li>
-      <li><a href="#etape-2">Votre porte</a></li>
-      <li><a href="#etape-3">Où et quand</a></li>
-      <li><a href="#etape-4">Vos coordonnées</a></li>
-    </ol>
+    <div class="devis-colonne">
+      <ol class="devis-plan" role="list" aria-label="Les quatre étapes">
+        <li><a href="#etape-1">Ce que vous voulez faire</a></li>
+        <li><a href="#etape-2">Votre porte</a></li>
+        <li><a href="#etape-3">Où et quand</a></li>
+        <li><a href="#etape-4">Vos coordonnées</a></li>
+      </ol>
+      <figure class="devis-schema">
+        <img src="images/schemas/devis-trois-photos.b7ec693fb0.svg" width="400" height="187" alt="Coupe d’une porte ouverte, vue de dessus, côté extérieur en haut. Le cylindre, en laiton, traverse la porte ; le boîtier de la serrure est logé dans son épaisseur et les pênes sortent du chant. Les trois faces à photographier sont nommées : côté extérieur, côté intérieur et le chant." loading="eager" decoding="async">
+        <figcaption class="s-deroule-mention">Trois photos suffisent : les deux côtés de la serrure et le chant de la porte ouverte.</figcaption>
+      </figure>
+      <section class="devis-apres" aria-labelledby="titre-apres">
+        <h2 id="titre-apres" class="devis-apres-titre">Après l’envoi</h2>
+        <ol class="devis-apres-liste" role="list">
+          <li>On vous rappelle pour fixer le jour de la visite.</li>
+          <li>Le serrurier vient voir la porte. La visite et le devis écrit sont gratuits.</li>
+          <li>Rien n’est commandé avant votre signature.</li>
+        </ol>
+      </section>
+    </div>
 
     <div class="devis-formulaire">
       <form class="formulaire devis-champs" id="formulaire-devis" action="404.html" method="post" enctype="multipart/form-data" data-formulaire data-etapes data-merci="/merci" data-sujet="Rendez-vous et devis pour une pose" data-hors-zone="Cette commune n'est pas encore dans notre zone habituelle. Votre demande n'est pas partie. Appelez-nous : on vous dit si un serrurier peut quand même venir." data-en-cours="Envoi en cours…" data-resume="Il manque une réponse ou deux. Elles sont signalées sous chaque champ concerné." data-erreur-choix="Choisissez une réponse pour continuer.">
@@ -140,7 +154,7 @@
               <label class="devis-tuile"><input type="radio" name="travaux" value="Changer ou ajouter une serrure" required data-libelle="Les travaux" data-erreur="Choisissez les travaux, même à peu près. « Autre chose » convient aussi."><span>Changer ou ajouter une serrure</span></label>
               <label class="devis-tuile"><input type="radio" name="travaux" value="Poser une serrure trois ou cinq points" required data-libelle="Les travaux" data-erreur="Choisissez les travaux, même à peu près. « Autre chose » convient aussi."><span>Poser une serrure trois ou cinq points</span></label>
               <label class="devis-tuile"><input type="radio" name="travaux" value="Blinder la porte" required data-libelle="Les travaux" data-erreur="Choisissez les travaux, même à peu près. « Autre chose » convient aussi."><span>Blinder la porte</span></label>
-              <label class="devis-tuile"><input type="radio" name="travaux" value="Poser une serrure connectée ou à code [À CONFIRMER : pose de serrures connectées, question 6 de STRATEGIE.md section 14]" required data-libelle="Les travaux" data-erreur="Choisissez les travaux, même à peu près. « Autre chose » convient aussi."><span>Poser une serrure connectée ou à code [À CONFIRMER : pose de serrures connectées, question 6 de STRATEGIE.md section 14]</span></label>
+              <label class="devis-tuile"><input type="radio" name="travaux" value="Poser une serrure à code" required data-libelle="Les travaux" data-erreur="Choisissez les travaux, même à peu près. « Autre chose » convient aussi."><span>Poser une serrure à code</span></label>
               <label class="devis-tuile"><input type="radio" name="travaux" value="Réparer après un cambriolage" required data-libelle="Les travaux" data-erreur="Choisissez les travaux, même à peu près. « Autre chose » convient aussi."><span>Réparer après un cambriolage</span></label>
               <label class="devis-tuile"><input type="radio" name="travaux" value="Autre chose" required data-libelle="Les travaux" data-erreur="Choisissez les travaux, même à peu près. « Autre chose » convient aussi."><span>Autre chose</span></label>
             </div>
@@ -209,35 +223,263 @@
             <input type="text" id="f-commune" name="commune" list="liste-communes" required maxlength="80" autocomplete="address-level2" spellcheck="false" aria-describedby="aide-commune" data-libelle="Votre commune" data-erreur="Indiquez votre commune pour qu'on sache si le serrurier peut venir.">
             <datalist id="liste-communes">
               <option value="Dijon"></option>
-              <option value="Chenôve"></option>
-              <option value="Talant"></option>
-              <option value="Chevigny-Saint-Sauveur"></option>
               <option value="Fontaine-lès-Dijon"></option>
-              <option value="Quetigny"></option>
-              <option value="Longvic"></option>
-              <option value="Saint-Apollinaire"></option>
-              <option value="Marsannay-la-Côte"></option>
-              <option value="Neuilly-Crimolois"></option>
-              <option value="Plombières-lès-Dijon"></option>
-              <option value="Perrigny-lès-Dijon"></option>
-              <option value="Sennecey-lès-Dijon"></option>
-              <option value="Varois-et-Chaignot"></option>
-              <option value="Genlis"></option>
-              <option value="Gevrey-Chambertin"></option>
-              <option value="Arc-sur-Tille"></option>
-              <option value="Nuits-Saint-Georges"></option>
-              <option value="Is-sur-Tille"></option>
-              <option value="Brazey-en-Plaine"></option>
+              <option value="Talant"></option>
               <option value="Ahuy"></option>
-              <option value="Fénay"></option>
+              <option value="Saint-Apollinaire"></option>
+              <option value="Chenôve"></option>
+              <option value="Ruffey-lès-Echirey"></option>
+              <option value="Longvic"></option>
               <option value="Daix"></option>
-              <option value="Ouges"></option>
+              <option value="Bellefond"></option>
+              <option value="Quetigny"></option>
+              <option value="Asnières-lès-Dijon"></option>
+              <option value="Plombières-lès-Dijon"></option>
               <option value="Hauteville-lès-Dijon"></option>
+              <option value="Marsannay-la-Côte"></option>
+              <option value="Sennecey-lès-Dijon"></option>
+              <option value="Corcelles-les-Monts"></option>
+              <option value="Varois-et-Chaignot"></option>
+              <option value="Chevigny-Saint-Sauveur"></option>
+              <option value="Perrigny-lès-Dijon"></option>
+              <option value="Norges-la-Ville"></option>
+              <option value="Bretigny"></option>
+              <option value="Ouges"></option>
+              <option value="Couternon"></option>
+              <option value="Neuilly-Crimolois"></option>
+              <option value="Velars-sur-Ouche"></option>
+              <option value="Orgeux"></option>
+              <option value="Couchey"></option>
+              <option value="Fénay"></option>
+              <option value="Darois"></option>
+              <option value="Messigny-et-Vantoux"></option>
+              <option value="Flavignerot"></option>
+              <option value="Fixin"></option>
+              <option value="Prenois"></option>
+              <option value="Étaules"></option>
+              <option value="Clénay"></option>
+              <option value="Saint-Julien"></option>
+              <option value="Savigny-le-Sec"></option>
+              <option value="Brochon"></option>
               <option value="Bressey-sur-Tille"></option>
               <option value="Bretenière"></option>
+              <option value="Fauverney"></option>
+              <option value="Saulon-la-Rue"></option>
               <option value="Magny-sur-Tille"></option>
-              <option value="Corcelles-les-Monts"></option>
-              <option value="Flavignerot"></option>
+              <option value="Lantenay"></option>
+              <option value="Arc-sur-Tille"></option>
+              <option value="Gevrey-Chambertin"></option>
+              <option value="Marsannay-le-Bois"></option>
+              <option value="Rouvres-en-Plaine"></option>
+              <option value="Épagny"></option>
+              <option value="Arceau"></option>
+              <option value="Brognon"></option>
+              <option value="Fleurey-sur-Ouche"></option>
+              <option value="Barges"></option>
+              <option value="Izier"></option>
+              <option value="Flacey"></option>
+              <option value="Saulon-la-Chapelle"></option>
+              <option value="Val-Suzon"></option>
+              <option value="Saint-Philibert"></option>
+              <option value="Pasques"></option>
+              <option value="Saussy"></option>
+              <option value="Chambœuf"></option>
+              <option value="Broindon"></option>
+              <option value="Thorey-en-Plaine"></option>
+              <option value="Morey-Saint-Denis"></option>
+              <option value="Valforêt"></option>
+              <option value="Remilly-sur-Tille"></option>
+              <option value="Ancey"></option>
+              <option value="Urcy"></option>
+              <option value="Cessey-sur-Tille"></option>
+              <option value="Varanges"></option>
+              <option value="Chaignay"></option>
+              <option value="Pichanges"></option>
+              <option value="Curtil-Saint-Seine"></option>
+              <option value="Noiron-sous-Gevrey"></option>
+              <option value="Arcey"></option>
+              <option value="Marliens"></option>
+              <option value="Savouges"></option>
+              <option value="Curley"></option>
+              <option value="Chambolle-Musigny"></option>
+              <option value="Longecourt-en-Plaine"></option>
+              <option value="Beire-le-Châtel"></option>
+              <option value="Spoy"></option>
+              <option value="Magny-Saint-Médard"></option>
+              <option value="Genlis"></option>
+              <option value="Francheville"></option>
+              <option value="Panges"></option>
+              <option value="Gilly-lès-Cîteaux"></option>
+              <option value="Sainte-Marie-sur-Ouche"></option>
+              <option value="Épernay-sous-Gevrey"></option>
+              <option value="Binges"></option>
+              <option value="Mâlain"></option>
+              <option value="Gemeaux"></option>
+              <option value="Labergement-Foigney"></option>
+              <option value="Belleneuve"></option>
+              <option value="Vernot"></option>
+              <option value="Baulme-la-Roche"></option>
+              <option value="Vougeot"></option>
+              <option value="Reulle-Vergy"></option>
+              <option value="Corcelles-lès-Cîteaux"></option>
+              <option value="Villecomte"></option>
+              <option value="Semezanges"></option>
+              <option value="Savolles"></option>
+              <option value="Saint-Martin-du-Mont"></option>
+              <option value="Saint-Bernard"></option>
+              <option value="Prâlon"></option>
+              <option value="Flagey-Echézeaux"></option>
+              <option value="Viévigne"></option>
+              <option value="Gergueil"></option>
+              <option value="Izeure"></option>
+              <option value="Blaisy-Haut"></option>
+              <option value="Chambeire"></option>
+              <option value="Vosne-Romanée"></option>
+              <option value="Tart-le-Bas"></option>
+              <option value="L'Étang-Vergy"></option>
+              <option value="Beire-le-Fort"></option>
+              <option value="Aiserey"></option>
+              <option value="Tellecey"></option>
+              <option value="Curtil-Vergy"></option>
+              <option value="Tart"></option>
+              <option value="Tanay"></option>
+              <option value="Ternant"></option>
+              <option value="Gissey-sur-Ouche"></option>
+              <option value="Agey"></option>
+              <option value="Savigny-sous-Mâlain"></option>
+              <option value="Longeault-Pluvault"></option>
+              <option value="Longchamp"></option>
+              <option value="Nuits-Saint-Georges"></option>
+              <option value="Diénay"></option>
+              <option value="Trochères"></option>
+              <option value="Villebichot"></option>
+              <option value="Trouhaut"></option>
+              <option value="Échigey"></option>
+              <option value="Cirey-lès-Pontailler"></option>
+              <option value="Marcilly-sur-Tille"></option>
+              <option value="Tarsul"></option>
+              <option value="Boncourt-le-Bois"></option>
+              <option value="Segrois"></option>
+              <option value="Étevaux"></option>
+              <option value="Vaux-Saules"></option>
+              <option value="Mesmont"></option>
+              <option value="Cuiserey"></option>
+              <option value="Saint-Seine-l'Abbaye"></option>
+              <option value="Bévy"></option>
+              <option value="Saint-Nicolas-lès-Cîteaux"></option>
+              <option value="Lux"></option>
+              <option value="Blaisy-Bas"></option>
+              <option value="Is-sur-Tille"></option>
+              <option value="Villars-Fontaine"></option>
+              <option value="Bessey-lès-Cîteaux"></option>
+              <option value="Collonges-et-Premières"></option>
+              <option value="Messanges"></option>
+              <option value="Pluvet"></option>
+              <option value="Courtivron"></option>
+              <option value="Collonges-lès-Bévy"></option>
+              <option value="Agencourt"></option>
+              <option value="Noiron-sur-Bèze"></option>
+              <option value="Mirebeau-sur-Bèze"></option>
+              <option value="Marandeuil"></option>
+              <option value="Remilly-en-Montagne"></option>
+              <option value="Bézouotte"></option>
+              <option value="Barbirey-sur-Ouche"></option>
+              <option value="Saint-Victor-sur-Ouche"></option>
+              <option value="Til-Châtel"></option>
+              <option value="Bussy-la-Pesle"></option>
+              <option value="Frénois"></option>
+              <option value="Bèze"></option>
+              <option value="Soirans"></option>
+              <option value="Saint-Léger-Triey"></option>
+              <option value="Saint-Jean-de-Bœuf"></option>
+              <option value="Meuilley"></option>
+              <option value="Chevannes"></option>
+              <option value="Saulx-le-Duc"></option>
+              <option value="Moloy"></option>
+              <option value="Aubigny-en-Plaine"></option>
+              <option value="Charmes"></option>
+              <option value="Champagny"></option>
+              <option value="Chaux"></option>
+              <option value="Sombernon"></option>
+              <option value="Tréclun"></option>
+              <option value="Turcey"></option>
+              <option value="Lamargelle"></option>
+              <option value="Grenant-lès-Sombernon"></option>
+              <option value="Drée"></option>
+              <option value="Quincey"></option>
+              <option value="Montot"></option>
+              <option value="Brazey-en-Plaine"></option>
+              <option value="Bligny-le-Sec"></option>
+              <option value="Détain-et-Bruant"></option>
+              <option value="Gerland"></option>
+              <option value="Échevannes"></option>
+              <option value="Magny-Montarlot"></option>
+              <option value="Arcenant"></option>
+              <option value="Champdôtre"></option>
+              <option value="Montmançon"></option>
+              <option value="Drambon"></option>
+              <option value="Verrey-sous-Drée"></option>
+              <option value="Lamarche-sur-Saône"></option>
+              <option value="Saint-Hélier"></option>
+              <option value="Premeaux-Prissey"></option>
+              <option value="Magny-lès-Aubigny"></option>
+              <option value="Villotte-Saint-Seine"></option>
+              <option value="Marey-lès-Fussey"></option>
+              <option value="Oisilly"></option>
+              <option value="Comblanchien"></option>
+              <option value="Trouhans"></option>
+              <option value="Cheuge"></option>
+              <option value="Blagny-sur-Vingeanne"></option>
+              <option value="Villers-la-Faye"></option>
+              <option value="Vieilmoulin"></option>
+              <option value="Échannay"></option>
+              <option value="La Bussière-sur-Ouche"></option>
+              <option value="Villey-sur-Tille"></option>
+              <option value="Pellerey"></option>
+              <option value="Villers-les-Pots"></option>
+              <option value="Véronnes"></option>
+              <option value="Fussey"></option>
+              <option value="Charrey-sur-Saône"></option>
+              <option value="Poncey-sur-l'Ignon"></option>
+              <option value="Champrenault"></option>
+              <option value="Pont"></option>
+              <option value="Bourberain"></option>
+              <option value="Vonges"></option>
+              <option value="Athée"></option>
+              <option value="Antheuil"></option>
+              <option value="Crécey-sur-Tille"></option>
+              <option value="Poiseul-lès-Saulx"></option>
+              <option value="Beaumont-sur-Vingeanne"></option>
+              <option value="Broin"></option>
+              <option value="Avelanges"></option>
+              <option value="Léry"></option>
+              <option value="Saint-Sauveur"></option>
+              <option value="Poncey-lès-Athée"></option>
+              <option value="Bonnencontre"></option>
+              <option value="Corgoloin"></option>
+              <option value="Marey-sur-Tille"></option>
+              <option value="Montoillot"></option>
+              <option value="Magny-lès-Villers"></option>
+              <option value="Charencey"></option>
+              <option value="Veuvey-sur-Ouche"></option>
+              <option value="Pontailler-sur-Saône"></option>
+              <option value="Maxilly-sur-Saône"></option>
+              <option value="Saint-Mesmin"></option>
+              <option value="Tillenay"></option>
+              <option value="Échevronne"></option>
+              <option value="Saint-Anthot"></option>
+              <option value="Chevannay"></option>
+              <option value="Orville"></option>
+              <option value="Verrey-sous-Salmaise"></option>
+              <option value="Renève"></option>
+              <option value="Bouilland"></option>
+              <option value="Dampierre-et-Flée"></option>
+              <option value="Argilly"></option>
+              <option value="Aubigny-lès-Sombernon"></option>
+              <option value="Esbarres"></option>
+              <option value="Le Meix"></option>
+              <option value="Salmaise"></option>
+              <option value="Saint-Usage"></option>
             </datalist>
           </div>
 
