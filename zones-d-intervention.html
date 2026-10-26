@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bouchon zones-d-intervention</title>
-<meta name="description" content="Bouchon de test zones-d-intervention">
-<meta name="robots" content="noindex, follow">
+<title>Communes desservies autour de Dijon | Mon Serrurier Express</title>
+<meta name="description" content="Dijon et les communes à 30 km autour, de Chenôve à Nuits-Saint-Georges, jour et nuit. Vérifiez si le serrurier vient chez vous.">
+<meta name="robots" content="noindex, nofollow, max-image-preview:large">
 <link rel="canonical" href="https://plateforme-serrurerie.example/zones-d-intervention">
 <meta name="theme-color" content="#F0F0ED">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -13,8 +13,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Mon Serrurier Express">
-<meta property="og:title" content="Bouchon zones-d-intervention">
-<meta property="og:description" content="Bouchon de test zones-d-intervention">
+<meta property="og:title" content="Communes desservies autour de Dijon | Mon Serrurier Express">
+<meta property="og:description" content="Dijon et les communes à 30 km autour, de Chenôve à Nuits-Saint-Georges, jour et nuit. Vérifiez si le serrurier vient chez vous.">
 <meta property="og:url" content="https://plateforme-serrurerie.example/zones-d-intervention">
 <meta property="og:image" content="https://plateforme-serrurerie.example/images/partage-partage.a48f4f3e91.jpg">
 <meta property="og:image:width" content="1200">
@@ -22,7 +22,7 @@
 <meta property="og:image:alt" content="Une rosace de serrure dans la pénombre, la clé engagée dans le cylindre">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="polices/hanken-grotesk-var.0c1c4c9142.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.cd14f9b043.css">
+<link rel="stylesheet" href="css/site.1f11e10046.css">
 <script>
   /* posé avant le premier rendu : sans JS rien n'est masqué, avec « réduire les animations » rien ne bouge */
   (function () {
@@ -36,8 +36,9 @@
     } catch (e) {}
   })();
 </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://plateforme-serrurerie.example/zones-d-intervention#page","url":"https://plateforme-serrurerie.example/zones-d-intervention","name":"Communes desservies autour de Dijon | Mon Serrurier Express","description":"Dijon et les communes à 30 km autour, de Chenôve à Nuits-Saint-Georges, jour et nuit. Vérifiez si le serrurier vient chez vous.","inLanguage":"fr-FR","isPartOf":{"@id":"https://plateforme-serrurerie.example/#site"},"about":{"@id":"https://plateforme-serrurerie.example/#entreprise"},"breadcrumb":{"@id":"https://plateforme-serrurerie.example/zones-d-intervention#ariane"}},{"@type":"BreadcrumbList","@id":"https://plateforme-serrurerie.example/zones-d-intervention#ariane","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://plateforme-serrurerie.example/"},{"@type":"ListItem","position":2,"name":"Dijon et 30 km autour","item":"https://plateforme-serrurerie.example/zones-d-intervention"}]}]}</script>
 </head>
-<body>
+<body class="page-guide page-zones">
 <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
 <defs>
 <symbol id="i-logo" viewBox="9 1 30 46"><path fill="currentColor" fill-rule="evenodd" d="M24 1A15 15 0 0 1 39 16V32A15 15 0 0 1 9 32V16A15 15 0 0 1 24 1ZM19 40.5V22.87A8.5 8.5 0 1 1 29 22.87V40.5Z"/></symbol>
@@ -96,7 +97,199 @@
     </div>
   </div>
 </header>
-<main id="contenu" class="conteneur"><h1>zones-d-intervention</h1></main>
+<main id="contenu">
+
+  <div class="guide">
+    <header class="guide-tete">
+      <div class="ariane">
+        <ol role="list">
+          <li><a href="accueil.html">Accueil</a></li>
+          <li><span aria-current="page">Dijon et 30 km autour</span></li>
+        </ol>
+      </div>
+      <h1>Serrurier autour de Dijon, à 30 km à la ronde</h1>
+      <p class="zones-chapeau">Nous intervenons à Dijon et dans toutes les communes à 30 km au plus, de jour comme de nuit. Le prix de départ est le même partout.</p>
+    </header>
+
+    <aside class="guide-marge zones-marge" aria-labelledby="zones-prix">
+      <p class="prix-chiffres" id="zones-prix">À partir de 75 € TTC</p>
+      <a class="bouton bouton-fort" href="tel:[À CONFIRMER : numéro de téléphone]" data-barre-retrait>
+        <svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg>
+        <span>Appeler le <span class="numero">[À CONFIRMER : numéro de téléphone]</span></span>
+      </a>
+      <div class="communes-test zones-test" data-communes data-oui="Oui, nous intervenons à" data-non="Nous n'intervenons pas encore dans cette commune en temps normal. Appelez quand même : on vous dit tout de suite si un serrurier peut venir." data-inconnue="Cette commune n'est pas dans notre liste. Appelez : on vous dit tout de suite si un serrurier peut venir.">
+        <template data-communes-modele>
+          <label for="champ-commune">Votre commune</label>
+          <p class="communes-aide" id="aide-commune">Tapez les premières lettres : on vous dit si le serrurier vient jusque chez vous.</p>
+          <input id="champ-commune" type="text" list="liste-communes" autocomplete="off" spellcheck="false" aria-describedby="aide-commune">
+          <p class="communes-reponse" data-communes-reponse aria-live="polite"></p>
+          <datalist id="liste-communes">
+            <option value="Dijon"></option>
+            <option value="Chenôve"></option>
+            <option value="Talant"></option>
+            <option value="Chevigny-Saint-Sauveur"></option>
+            <option value="Fontaine-lès-Dijon"></option>
+            <option value="Quetigny"></option>
+            <option value="Longvic"></option>
+            <option value="Saint-Apollinaire"></option>
+            <option value="Marsannay-la-Côte"></option>
+            <option value="Neuilly-Crimolois"></option>
+            <option value="Plombières-lès-Dijon"></option>
+            <option value="Perrigny-lès-Dijon"></option>
+            <option value="Sennecey-lès-Dijon"></option>
+            <option value="Varois-et-Chaignot"></option>
+            <option value="Genlis"></option>
+            <option value="Gevrey-Chambertin"></option>
+            <option value="Arc-sur-Tille"></option>
+            <option value="Nuits-Saint-Georges"></option>
+            <option value="Is-sur-Tille"></option>
+            <option value="Brazey-en-Plaine"></option>
+            <option value="Ahuy"></option>
+            <option value="Fénay"></option>
+            <option value="Daix"></option>
+            <option value="Ouges"></option>
+            <option value="Hauteville-lès-Dijon"></option>
+            <option value="Bressey-sur-Tille"></option>
+            <option value="Bretenière"></option>
+            <option value="Magny-sur-Tille"></option>
+            <option value="Corcelles-les-Monts"></option>
+            <option value="Flavignerot"></option>
+          </datalist>
+        </template>
+        <template data-communes-hors-zone>
+          <option value="Auxonne"></option>
+          <option value="Beaune"></option>
+        </template>
+      </div>
+    </aside>
+
+    <div class="guide-corps">
+      <section class="guide-section zones-liste" aria-labelledby="g-liste">
+        <h2 id="g-liste">Les communes, de la plus proche à la plus lointaine</h2>
+        <p>Les distances se mesurent à vol d’oiseau du centre de Dijon au centre de la commune, d’après les données géographiques de l’État.</p>
+<p>La liste n’est pas complète : 258 communes tiennent dans le cercle de 30 km.</p>
+<p>Si la vôtre en fait partie, nous venons aussi chez vous de jour comme de nuit.</p>
+        <div class="zones-dijon">
+          <p class="zones-dijon-nom">Dijon</p>
+          <a class="lien" href="serrurier/dijon.html">Serrurier à Dijon : prix, nuit, après un cambriolage</a>
+        </div>
+        <details class="zones-groupe" open>
+          <summary class="zones-groupe-titre"><span class="zones-groupe-nom">À moins de 5 km</span><span class="zones-replie">Afficher les communes</span><span class="zones-deplie">Masquer les communes</span><svg class="question-signe" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v13M1.5 8h13"/></svg></summary>
+          <ul class="zones-communes" role="list">
+            <li>Fontaine-lès-Dijon, 1,8 km</li>
+            <li>Talant, 2,8 km</li>
+            <li>Ahuy, 4,3 km</li>
+            <li>Saint-Apollinaire, 4,7 km</li>
+          </ul>
+        </details>
+        <details class="zones-groupe">
+          <summary class="zones-groupe-titre"><span class="zones-groupe-nom">De 5 à 10 km</span><span class="zones-replie">Afficher les communes</span><span class="zones-deplie">Masquer les communes</span><svg class="question-signe" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v13M1.5 8h13"/></svg></summary>
+          <ul class="zones-communes" role="list">
+            <li>Chenôve, 5,1 km</li>
+            <li>Longvic, 5,5 km</li>
+            <li>Daix, 5,7 km</li>
+            <li>Quetigny, 6,2 km</li>
+            <li>Plombières-lès-Dijon, 6,4 km</li>
+            <li>Hauteville-lès-Dijon, 6,6 km</li>
+            <li>Marsannay-la-Côte, 6,7 km</li>
+            <li>Sennecey-lès-Dijon, 7,1 km</li>
+            <li>Corcelles-les-Monts, 7,3 km</li>
+            <li>Varois-et-Chaignot, 7,8 km</li>
+            <li>Chevigny-Saint-Sauveur, 8,4 km</li>
+            <li>Perrigny-lès-Dijon, 8,5 km</li>
+            <li>Ouges, 8,8 km</li>
+            <li>Neuilly-Crimolois, 9,1 km</li>
+            <li>Fénay, 9,8 km</li>
+          </ul>
+        </details>
+        <details class="zones-groupe">
+          <summary class="zones-groupe-titre"><span class="zones-groupe-nom">De 10 à 20 km</span><span class="zones-replie">Afficher les communes</span><span class="zones-deplie">Masquer les communes</span><svg class="question-signe" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v13M1.5 8h13"/></svg></summary>
+          <ul class="zones-communes" role="list">
+            <li>Flavignerot, 10,5 km</li>
+            <li>Bressey-sur-Tille, 11,6 km</li>
+            <li>Bretenière, 11,7 km</li>
+            <li>Magny-sur-Tille, 12,1 km</li>
+            <li>Arc-sur-Tille, 12,7 km</li>
+            <li>Gevrey-Chambertin, 13 km</li>
+            <li>Genlis, 17,4 km</li>
+          </ul>
+        </details>
+        <details class="zones-groupe">
+          <summary class="zones-groupe-titre"><span class="zones-groupe-nom">De 20 à 30 km</span><span class="zones-replie">Afficher les communes</span><span class="zones-deplie">Masquer les communes</span><svg class="question-signe" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v13M1.5 8h13"/></svg></summary>
+          <ul class="zones-communes" role="list">
+            <li>Nuits-Saint-Georges, 21,2 km</li>
+            <li>Is-sur-Tille, 22,3 km</li>
+            <li>Brazey-en-Plaine, 25,4 km</li>
+          </ul>
+        </details>
+      </section>
+
+      <section class="guide-section" aria-labelledby="g-distance">
+        <h2 id="g-distance">Plus loin de Dijon, même prix de départ</h2>
+        <p>Nos prix commencent à 75 € TTC, par exemple pour ouvrir une porte claquée en journée à Talant comme à Nuits-Saint-Georges. Le déplacement est compris.</p>
+<p>Le serrurier fixe le prix final devant la porte dans un devis écrit avant de commencer.</p>
+<p>Un dépannage compte 75 € TTC de déplacement et de diagnostic, ou 95 € TTC de 21 h à 6 h.</p>
+<p>Cette somme est comprise dans le prix si vous acceptez le devis. Vous ne payez qu’elle si vous le refusez. Un SMS vous redit la règle après l’appel.</p>
+        <a class="lien guide-section-lien" href="tarifs.html">Voir le barème complet</a>
+      </section>
+
+      <section class="guide-section" aria-labelledby="g-delai">
+        <h2 id="g-delai">Ce que la distance change : le temps de route</h2>
+        <p>Habiter à 2 km ou à 25 km ne change pas le prix de départ. Ça change le temps de route.</p>
+<p>Ce temps dépend aussi de l’heure et de l’endroit où se trouve le serrurier quand vous appelez.</p>
+<p>C’est pourquoi aucun délai n’est écrit ici. On vous donne au téléphone une heure d’arrivée estimée et on vous rappelle si elle glisse.</p>
+      </section>
+
+      <section class="guide-section" aria-labelledby="g-hors-zone">
+        <h2 id="g-hors-zone">Au-delà de 30 km</h2>
+        <p>Auxonne (32 km) et Beaune (37 km) sont hors de notre zone. Nous n’intervenons pas encore ailleurs en France.</p>
+<p>Vous pouvez quand même appeler pour poser la question. La réponse peut être non.</p>
+      </section>
+
+      <section class="guide-section guide-questions" aria-labelledby="g-questions">
+        <h2 id="g-questions">Sur la zone, ce qu’on nous demande</h2>
+        <div class="questions-liste">
+          <details class="question" name="questions">
+            <summary class="question-titre"><span class="question-texte">Comment est mesurée la distance ?</span><svg class="question-signe" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v13M1.5 8h13"/></svg></summary>
+            <div class="question-reponse"><p>Elle se mesure à vol d’oiseau entre le centre de Dijon et celui de votre commune. La route est toujours un peu plus longue.</p></div>
+          </details>
+          <details class="question" name="questions">
+            <summary class="question-titre"><span class="question-texte">Ma commune n’est pas dans la liste, mais elle est tout près : vous venez ?</span><svg class="question-signe" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v13M1.5 8h13"/></svg></summary>
+            <div class="question-reponse"><p>Oui, si elle est à 30 km au plus du centre de Dijon : toutes ces communes sont desservies. Dites la vôtre dès le début de l’appel.</p></div>
+          </details>
+          <details class="question" name="questions">
+            <summary class="question-titre"><span class="question-texte">Vous venez aussi la nuit dans les communes autour ?</span><svg class="question-signe" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v13M1.5 8h13"/></svg></summary>
+            <div class="question-reponse"><p>Oui, dans toute la zone. De nuit le serrurier remet la porte en état de fermer ; changer une serrure qui marche encore se propose de jour.</p></div>
+          </details>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="guide-suite" aria-labelledby="titre-suite">
+    <h2 id="titre-suite">Avant d’appeler</h2>
+    <ul role="list">
+      <li><a href="tarifs.html">Les tarifs, de jour comme de nuit</a></li>
+      <li><a href="qui-intervient.html">Qui vient chez vous</a></li>
+      <li><a href="comment-ca-marche.html">Comment se passe une intervention</a></li>
+      <li><a href="guides/reconnaitre-un-faux-serrurier.html">Reconnaître un faux dépanneur serrurier</a></li>
+    </ul>
+  </section>
+
+  <section class="guide-fin" aria-labelledby="titre-fin">
+    <div class="guide-fin-dedans">
+      <h2 id="titre-fin">Vous êtes dans la zone, et la porte est bloquée</h2>
+      <div class="guide-fin-action">
+        <p>Dites votre commune et ce qui coince dès le début de l’appel.</p>
+        <a class="bouton bouton-fort" href="tel:[À CONFIRMER : numéro de téléphone]">
+          <svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg>
+          <span>Appeler le <span class="numero">[À CONFIRMER : numéro de téléphone]</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
 <footer class="pied sombre" data-barre-pied>
   <div class="pied-dedans">
     <div class="pied-appel">
@@ -131,7 +324,6 @@
     </nav>
     <div class="pied-bas">
       <p>© 2026 Mon Serrurier Express</p>
-      <p>Site conçu par Meryl</p>
     </div>
   </div>
 </footer>
@@ -144,8 +336,9 @@
   <p class="barre-appel-ligne" id="barre-appel-ligne">À partir de 75 € TTC, devis écrit sur place</p>
 </aside>
 <script type="module" src="js/menu.3d5d6e51ad.js"></script>
-<script type="module" src="js/heure.3dac7376a8.js"></script>
+<script type="module" src="js/heure.e86de1bcf9.js"></script>
 <script type="module" src="js/barre-appel.aed1ee808f.js"></script>
-<script type="module" src="js/mouvement.9191cdef1e.js"></script>
+<script type="module" src="js/mouvement.d2ff3cde79.js"></script>
+<script type="module" src="js/communes.ba9c1408e2.js"></script>
 </body>
 </html>
