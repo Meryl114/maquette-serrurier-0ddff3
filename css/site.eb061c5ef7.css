@@ -1,5 +1,5 @@
-@font-face{font-family:"Hanken Grotesk";src:url(/polices/hanken-grotesk-var.0c1c4c9142.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
-@font-face{font-family:"Spectral";src:url(/polices/spectral-300.7e9c4a35e9.woff2) format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(../polices/hanken-grotesk-var.0c1c4c9142.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Spectral";src:url(../polices/spectral-300.7e9c4a35e9.woff2) format("woff2");font-weight:300;font-style:normal;font-display:swap}
 :root{
 --couleur-fond:#F0F0ED;
 --couleur-surface:#E4E3E0;
