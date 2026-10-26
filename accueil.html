@@ -22,7 +22,7 @@
 <meta property="og:image:alt" content="Une rosace de serrure dans la pénombre, la clé engagée dans le cylindre">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="polices/hanken-grotesk-var.0c1c4c9142.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.b742c9d6bd.css">
+<link rel="stylesheet" href="css/site.cef357e64a.css">
 <script>
   /* posé avant le premier rendu : sans JS rien n'est masqué, avec « réduire les animations » rien ne bouge */
   (function () {
@@ -259,6 +259,10 @@
         <p class="communes-aide" id="aide-commune">Tapez les premières lettres : on vous dit si le serrurier vient jusque chez vous.</p>
         <input id="champ-commune" type="text" list="liste-communes" autocomplete="off" spellcheck="false" aria-describedby="aide-commune">
         <p class="communes-reponse" data-communes-reponse aria-live="polite"></p>
+        <a class="bouton bouton-fort communes-appel" href="tel:[À CONFIRMER : numéro de téléphone]" data-communes-appel hidden>
+          <svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg>
+          <span>Appeler maintenant</span>
+        </a>
         <datalist id="liste-communes">
           <option value="Dijon"></option>
           <option value="Fontaine-lès-Dijon"></option>
@@ -612,6 +616,6 @@
 <script type="module" src="js/heure.e86de1bcf9.js"></script>
 <script type="module" src="js/barre-appel.aed1ee808f.js"></script>
 <script type="module" src="js/mouvement.d2ff3cde79.js"></script>
-<script type="module" src="js/communes.ba9c1408e2.js"></script>
+<script type="module" src="js/communes.a0407b58a1.js"></script>
 </body>
 </html>

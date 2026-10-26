@@ -8,6 +8,9 @@ if (bloc && modele) {
   bloc.append(modele.content.cloneNode(true));
   const champ = bloc.querySelector('input');
   const reponse = bloc.querySelector('[data-communes-reponse]');
+  // le bouton d'appel ne paraît qu'avec un oui : la personne sait qu'on vient, elle appelle
+  const appel = bloc.querySelector('[data-communes-appel]');
+  const montrerAppel = (oui) => { if (appel) appel.hidden = !oui; };
   const liste = document.getElementById(champ.getAttribute('list'));
   const simple = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’'\s-]+/g, ' ').trim().toLowerCase();
 
@@ -23,14 +26,17 @@ if (bloc && modele) {
     if (!saisi) {
       reponse.textContent = '';
       delete reponse.dataset.etat;
+      montrerAppel(false);
       return;
     }
     if (trouvee) {
       reponse.textContent = trouvee.oui ? `${bloc.dataset.oui} ${trouvee.nom}.` : bloc.dataset.non;
       reponse.dataset.etat = trouvee.oui ? 'oui' : 'non';
+      montrerAppel(trouvee.oui);
     } else if (definitif) {
       reponse.textContent = bloc.dataset.inconnue;
       reponse.dataset.etat = 'inconnue';
+      montrerAppel(false);
     }
   };
 
